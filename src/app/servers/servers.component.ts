@@ -17,8 +17,8 @@ export class ServersComponent implements OnInit {
   username = '';
   serverCreated = false;
   servers = ['Testserver', 'Testserver2'];
-  clickCounter = 0;
   clickedValues = [];
+  showSecret = false;
 
   constructor() {
     setTimeout(() => {
@@ -41,10 +41,7 @@ export class ServersComponent implements OnInit {
   }
 
   toggleParagraphHidden() {
-    let p = (<HTMLParagraphElement>document.getElementById("toggledParagraph"));
-    p.hidden === true ? p.hidden = false : p.hidden = true;
-    this.clickedValues.push(this.clickCounter);
-    this.clickCounter++;
-    console.log(this.clickedValues);
+    this.showSecret = !this.showSecret;
+    this.clickedValues.push(this.clickedValues.length + 1);
   }
 }
