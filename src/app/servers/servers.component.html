@@ -19,6 +19,20 @@
   <p>No server was created!</p>
 </ng-template>
 
+<button
+  (click)="toggleParagraphHidden()">
+  Display Details
+</button>
+<li>
+  <ul 
+    *ngFor="let clickValue of clickedValues"
+    [ngClass]="{white: clickValue > 4}"
+    [ngStyle]="{backgroundColor: clickValue > 4 ? 'blue' : ''}">
+    {{clickValue}}
+  </ul>
+</li>
+<p id="toggledParagraph">Secret Password = tuna</p>
+
 <!-- <br>
 <input
   type="text"

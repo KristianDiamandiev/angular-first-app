@@ -17,6 +17,8 @@ export class ServersComponent implements OnInit {
   username = '';
   serverCreated = false;
   servers = ['Testserver', 'Testserver2'];
+  clickCounter = 0;
+  clickedValues = [];
 
   constructor() {
     setTimeout(() => {
@@ -36,5 +38,13 @@ export class ServersComponent implements OnInit {
   onUpdateServerName(event: any) {
     console.log(event);
     this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  toggleParagraphHidden() {
+    let p = (<HTMLParagraphElement>document.getElementById("toggledParagraph"));
+    p.hidden === true ? p.hidden = false : p.hidden = true;
+    this.clickedValues.push(this.clickCounter);
+    this.clickCounter++;
+    console.log(this.clickedValues);
   }
 }
