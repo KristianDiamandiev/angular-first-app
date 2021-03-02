@@ -25,9 +25,9 @@
 </button>
 <li>
   <ul 
-    *ngFor="let clickValue of clickedValues"
-    [ngClass]="{white: clickValue >= 5}"
-    [ngStyle]="{backgroundColor: clickValue >= 5 ? 'blue' : 'transparent'}">
+    *ngFor="let clickValue of clickedValues; let i = index"
+    [ngClass]="{'white': i >= 4}"
+    [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}">
     {{clickValue}}
   </ul>
 </li>

@@ -42,6 +42,7 @@ export class ServersComponent implements OnInit {
 
   toggleParagraphHidden() {
     this.showSecret = !this.showSecret;
-    this.clickedValues.push(this.clickedValues.length + 1);
+    //this.clickedValues.push(this.clickedValues.length + 1);
+    this.clickedValues.push(new Date());
   }
 }
